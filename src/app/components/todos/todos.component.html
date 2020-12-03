@@ -1,1 +1,36 @@
-<p>todos works!</p>
+<!-- <ul class="list-group w-100">
+    <li class="list-group-item d-flex justify-content-between w-100">
+        <span>
+            <input type="checkbox" checked="true">
+        </span>
+        <span>
+            Learn Java today!
+        </span>
+        <span>
+            12/06/2020
+        </span>
+        <span>
+            trash
+        </span>
+    </li>
+</ul> -->
+
+
+<!-- now we need to loop through it -->
+
+<ul class="list-group w-100" *ngFor="let todo of todos" >
+    <li class="list-group-item d-flex justify-content-between w-100" >
+        <span>
+            <input type="checkbox" checked="true" />
+        </span>
+        <span>
+           Learn java
+        </span>
+        <span>
+            12/06/2020
+        </span>
+        <span>
+            trash
+        </span>
+    </li>
+</ul>

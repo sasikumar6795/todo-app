@@ -8,7 +8,7 @@ import {Todo} from './../../model/Todo'
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-   todos : Todo[]
+   todos : Todo[];
   constructor(private todoService : TodoService) { }
 
   createTodo(todo: Todo)
@@ -31,6 +31,9 @@ export class TodosComponent implements OnInit {
     this.todoService.changeTodo(todo);
   }
   ngOnInit(): void {
+    this.todoService.getTodos().subscribe((todos) => {
+      this.todos = todos;
+    });
   }
 
 }
