@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from 'src/app/service/todo.service';
 import {Todo} from './../../model/Todo'
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-todos',
@@ -10,17 +11,8 @@ import {Todo} from './../../model/Todo'
 export class TodosComponent implements OnInit {
    todos : Todo[];
   constructor(private todoService : TodoService) { }
-
-  createTodo(todo: Todo)
-  {
-    this.todoService.createTodo(todo);
-  }
-
-  getTodo()
-  {
-    this.todoService.getTodos();
-  }
-
+  faTrashAlt =faTrashAlt;
+  
   deleteTodo(todo: Todo)
   {
     this.todoService.deleteTodo(todo);

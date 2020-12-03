@@ -18,16 +18,17 @@
 
 <!-- now we need to loop through it -->
 
-<ul class="list-group w-100" *ngFor="let todo of todos" >
+<ul class="list-group w-100" *ngFor="let todo of todos">
     <li class="list-group-item d-flex justify-content-between w-100" >
         <span>
-            <input type="checkbox" checked="true" />
+            <input (change)="changeTodoStatus(todo)" type="checkbox" [checked]="todo.isCompleted">
+        </span>
+        <!-- <span class="completedTodo"> -->
+        <span [ngClass]="{ completedTodo: todo.isCompleted }">
+           {{ todo.title }}
         </span>
         <span>
-           Learn java
-        </span>
-        <span>
-            12/06/2020
+            {{todo.date | date}}
         </span>
         <span>
             trash
